@@ -1,0 +1,61 @@
+match_careers_task:
+  agent: career_matchmaker_agent
+  description: >
+    Here is the student data:
+    {final_send_report}
+    Match the student's strengths, interests, and subject scores with 3-5 career paths.
+    Do not include paths that require strong performance in weak subjects.
+    Focus on what suits the student practically and academically.
+    For each career, include:
+    - Career Title
+    - Why it fits the student
+    - Required Skills
+    - Matching Academic Strengths
+  expected_output: >
+    A markdown list of:
+    - Career Title
+    - Fit Reason
+    - Skills Needed
+    - Academic Match
+    No intro, no outro, just the list.
+  output_format: markdown
+
+validate_trends_task:
+  agent: trend_analyst_agent
+  description: >
+    Use the career suggestions from the previous agent.
+    For each career:
+    - Rate current market demand (Low, Medium, High)
+    - Rate future growth potential (Low, Medium, High)
+    - Mention trending industries or companies hiring for it
+    - Optional: List emerging technologies/tools relevant to that career
+    Be crisp and useful for the student. No extra commentary.
+  expected_output: >
+    A markdown validation list:
+    - Career
+    - Demand: High/Medium/Low
+    - Growth: High/Medium/Low
+    - Hiring Areas/Companies
+    - Emerging Tech/Tools (if any)
+  output_format: markdown
+
+build_roadmap_task:
+  agent: future_planner_agent
+  description: >
+    Based on the refined careers, create a personalized career roadmap.
+    Break it into:
+    - Short-Term (0-6 months): Foundational learning, self-assessment
+    - Mid-Term (6-18 months): Skill-building, projects, certifications
+    - Long-Term (18+ months): Internships, advanced work, specialization
+    Add a final motivational paragraph encouraging consistency and self-belief.
+    Keep it structured and useful. No intros or context.
+    Do not add ```` or any other formatting.
+  expected_output: >
+    A markdown plan with:
+    - Short-Term Plan
+    - Mid-Term Plan
+    - Long-Term Plan
+    - Motivational Paragraph
+  output_format: markdown
+  output_file: outputs/career_guide.md
+  overwrite: true

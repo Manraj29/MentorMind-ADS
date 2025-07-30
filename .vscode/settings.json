@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./mentormind/src/mentormind/tools",
+        "./mentormindflows/src"
+    ]
+}

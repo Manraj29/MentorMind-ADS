@@ -1,0 +1,75 @@
+# preprocessing_task:
+#   description: >
+#     Clean and preprocess the student dataset by removing irrelevant columns,
+#     handling missing data, and standardizing formats for analysis.
+#   expected_output: >
+#     A cleaned and structured dataset ready for risk classification and analysis.
+#   agent: preprocessing_agent
+
+risk_classification_task:
+  description: >
+    Analyze the student dataset to determine which students are at risk of dropout
+    based on academic scores, attendance percentage, and study habits.
+  expected_output: >
+    A classification of students into 'at-risk' or 'not at-risk' categories with reasoning.
+  agent: risk_classification_agent
+
+recommendation_task:
+  description: >
+    Generate personalized recommendations for students based on their weaknesses,
+    study hours, and performance to help them improve.
+  expected_output: >
+    Tailored study tips and strategies for each at-risk student.
+  agent: recommendation_agent
+
+# eda_task:
+#   description: >
+#     Conduct exploratory data analysis on the dataset and generate visual insights
+#     such as score distribution, attendance vs performance, etc.
+#   expected_output: >
+#     Visual and textual analysis highlighting trends, gaps, and insights.
+#   agent: eda_agent
+
+# study_planner_task:
+#   description: >
+#     Create a weekly personalized study plan for students based on their weak subjects,
+#     available self-study hours, and exam schedules.
+#   expected_output: >
+#     A detailed weekly planner with study time blocks, subjects to focus on, and tips.
+#   agent: study_planner_agent
+
+# career_guide_task:
+#   description: >
+#     Suggest suitable career paths based on each student's strengths, interests,
+#     and academic performance.
+#   expected_output: >
+#     A list of best-fit careers with reasoning and optional preparation resources.
+#   agent: career_guide_agent
+
+# peer_comparison_task:
+#   description: >
+#     Compare a student’s performance with peers having similar backgrounds and goals.
+#   expected_output: >
+#     A peer benchmarking report showing where the student stands and how they can improve.
+#   agent: peer_comparison_agent
+
+# attendance_risk_task:
+#   description: >
+#     Evaluate students’ attendance patterns and predict the impact on performance,
+#     suggesting interventions where needed.
+#   expected_output: >
+#     A report on attendance concerns, risk projections, and suggested follow-ups.
+#   agent: attendance_risk_agent
+
+reporting_task:
+  description: >
+    Review the context you got and expand each topic into a full section for a report.
+    Make sure the report is detailed and contains any and all relevant information.
+    Conduct exploratory data analysis on the dataset and generate visual insights
+    such as score distribution, attendance vs performance, etc.
+  expected_output: >
+    A fully fledged report with the main topics, each with a full section of information.
+    Visual and textual analysis highlighting trends, gaps, and insights.
+    Formatted as markdown without '```'
+  agent: eda_agent
+  return_output: true

@@ -1,0 +1,2 @@
+Thought: I need to gather more information about the student's performance and attendance in each subject.
+Action: Write File Tool {filename: 'performance_and_attendance.md', content: 'To better understand the student''s performance and attendance, we will calculate their average score and attendance for each subject.', directory: '/outputs/', overwrite: true}
